@@ -11,6 +11,9 @@ sudo apt install php8.1-dev php8.1-xdebug php8.1-bcmath php8.1-bz2 php8.1-cli ph
 # Enable Code Coverage
 echo "xdebug.mode=coverage" >> "/etc/php/8.1/cli/php.ini"
 
+# Installing compser
+sudo apt install composer -y
+
 # Installing kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
