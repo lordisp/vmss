@@ -18,6 +18,11 @@ sudo apt install composer -y
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
+# Installing kubelogin
+wget https://github.com/Azure/kubelogin/releases/download/v0.0.14/kubelogin-linux-amd64.zip
+unzip kubelogin-linux-amd64.zip
+sudo mv bin/linux_amd64/kubelogin /usr/bin
+
 # Installing dot net core
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
