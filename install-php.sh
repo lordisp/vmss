@@ -12,7 +12,8 @@ sudo apt install php8.1-dev php8.1-xdebug php8.1-bcmath php8.1-bz2 php8.1-cli ph
 echo "xdebug.mode=coverage" >> "/etc/php/8.1/cli/php.ini"
 
 # Installing compser
-sudo apt install composer -y
+curl -sS https://getcomposer.org/installer -o composer-setup.php
+sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
 # Installing kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
