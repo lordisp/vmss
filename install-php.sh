@@ -20,7 +20,7 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 # Installing kubelogin
-apt install jq -y
+sudo apt-get update && sudo apt install jq -y
 wget https://github.com/Azure/kubelogin/releases/download/$(curl https://api.github.com/repos/Azure/kubelogin/releases/latest -s | jq .tag_name -r)/kubelogin-linux-amd64.zip
 unzip kubelogin-linux-amd64.zip && rm kubelogin-linux-amd64.zip
 sudo mv bin/linux_amd64/kubelogin /usr/bin
