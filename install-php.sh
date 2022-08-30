@@ -25,6 +25,12 @@ wget https://github.com/Azure/kubelogin/releases/download/$(curl https://api.git
 unzip kubelogin-linux-amd64.zip && rm kubelogin-linux-amd64.zip
 sudo mv bin/linux_amd64/kubelogin /usr/bin
 
+# Installing Helm
+curl https://baltocdn.com/helm/signing.asc | sudo apt-key add -
+sudo apt-get install apt-transport-https --yes
+echo "deb https://baltocdn.com/helm/stable/debian/ all main" | sudo tee /etc/apt/sources.list.d/helm-stable-debian.list
+sudo apt-get update && apt-get install helm -y
+
 # Installing dot net core
 wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
