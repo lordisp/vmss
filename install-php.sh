@@ -11,7 +11,7 @@ sudo apt install php8.1-dev php8.1-xdebug php8.1-bcmath php8.1-mbstring php8.1-b
 # Enable Code Coverage
 echo "xdebug.mode=coverage" >> "/etc/php/8.1/cli/php.ini"
 
-# Installing compser
+# Installing composer
 curl -sS https://getcomposer.org/installer -o composer-setup.php
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 
@@ -21,7 +21,7 @@ sudo install -o root -g root -m 0755 kubectl /usr/local/bin/kubectl
 
 # Installing kubelogin
 sudo apt-get update && sudo apt install jq unzip -y
-wget https://github.com/Azure/kubelogin/releases/download/$(curl https://api.github.com/repos/Azure/kubelogin/releases/latest -s | jq .tag_name -r)/kubelogin-linux-amd64.zip
+wget https://github.com/Azure/kubelogin/releases/download/"$(curl https://api.github.com/repos/Azure/kubelogin/releases/latest -s | jq .tag_name -r)"/kubelogin-linux-amd64.zip
 unzip kubelogin-linux-amd64.zip && rm kubelogin-linux-amd64.zip
 sudo mv bin/linux_amd64/kubelogin /usr/bin
 
