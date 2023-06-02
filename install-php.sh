@@ -6,7 +6,7 @@ sudo add-apt-repository ppa:ondrej/php -y
 sudo apt install php8.2 -y
 
 # Installing PHP Extensions
-sudo apt install php8.2-dev php8.2-xdebug php8.2-bcmath php8.2-mbstring php8.2-bz2 php8.2-cli php8.2-curl php8.2-common php8.2-dba php8.2-gd php8.2-mcrypt php8.2-mysql php8.2-psr php8.2-redis php8.2-sqlite3 php8.2-uuid php8.2-xdebug php8.2-xml php8.2-zip sqlite autoconf automake -y
+sudo apt install php8.2-dev php8.2-xdebug php8.2-bcmath php8.2-mbstring php8.2-bz2 php8.2-cli php8.2-curl php8.2-common php8.2-dba php8.2-gd php8.2-mcrypt php8.2-mysql php8.2-redis php8.2-sqlite3 php8.2-uuid php8.2-xdebug php8.2-xml php8.2-zip sqlite autoconf automake -y
 
 # Enable Code Coverage
 echo "xdebug.mode=coverage" >> "/etc/php/8.2/cli/php.ini"
