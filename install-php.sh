@@ -40,6 +40,12 @@ wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.
 sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
 
+# Uninstall apache2
+sudo systemctl stop apache2
+sudo apt-get purge apache2 apache2-utils apache2.2-bin apache2-common -y
+sudo apt-get autoremove -y
+sudo rm -rf /etc/apache2
+
 sudo apt-get update; \
 sudo apt-get install -y apt-transport-https && \
 sudo apt-get update && \
